@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "joi": "^6.0.8",
+    "mock-fs": "^2.5.0",
     "mysql": "^2.5.5"
   }
 }

@@ -25,7 +25,8 @@ var makeServer = function() {
 
   server.register(
     [
-      {register: require('./plugins/authentication.js')}
+      {register: require('./plugins/authentication.js')},
+      {register: require('./plugins/datafiles.js')}
     ], err);
   
   return server;
