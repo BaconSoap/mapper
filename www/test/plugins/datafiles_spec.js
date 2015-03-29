@@ -1,6 +1,6 @@
 require('../setup.js')
-var fs = require('fs');
 var mockFs = require('mock-fs');
+var fs;
 
 var server = require('../../server.js')();
 server.start();
@@ -13,7 +13,7 @@ describe('mapper.www.datafiles', function() {
   var configFs = function(name, contents) {
     var config = {};
     config[__dirname + '/' + name] = contents;
-    mockFs(config);
+    fs = mockFs.fs(config);
   };
 
   var setupValidUpload = function(name, contents) {
@@ -57,12 +57,12 @@ describe('mapper.www.datafiles', function() {
   });
 
   it('rejects files over a megabyte', function(done) {
-    configFs('oneMeg', new Array(1*1000*1000).join('1'))
+    configFs('overOneMeg', new Array(1*1024*1024).join('a') + 'b')
     
     request(server.listener)
       .post('/datafiles')
-      .field('file', fs.createReadStream(__dirname + '/oneMeg'))
-      .expect(/allowed: 1000000/)
+      .field('file', fs.createReadStream(__dirname + '/overOneMeg'))
+      .expect(/1000000 bytes/)
       .expect(400, done);
   });
 
