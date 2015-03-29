@@ -1,0 +1,4 @@
+#!/bin/bash
+pm2 stop bin/dev.json
+pm2 delete bin/dev.json
+pm2 start bin/dev.json

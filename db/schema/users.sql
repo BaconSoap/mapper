@@ -1,0 +1,7 @@
+USE mapper;
+
+CREATE TABLE users (
+	userid INT PRIMARY KEY AUTO_INCREMENT,
+	username VARCHAR(120) NOT NULL,
+	password VARCHAR(120) NOT NULL
+)

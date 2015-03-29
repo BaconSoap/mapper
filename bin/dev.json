@@ -1,0 +1,23 @@
+{
+	"apps": [
+		{
+			"name": "geocoder",
+			"cwd": "geocoder",
+			"ignore_watch": ["node_modules"],
+			"script": "app.js",
+			"watch": true,
+			"watch_options": {
+				"usePolling": true
+			}
+		},{
+			"name": "www",
+			"cwd": "www",
+			"ignore_watch": ["node_modules", "public"],
+			"script": "app.js",
+			"watch": true,
+			"watch_options": {
+				"usePolling": true
+			}
+		}
+	]
+}

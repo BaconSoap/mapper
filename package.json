@@ -1,0 +1,38 @@
+{
+  "name": "mapper",
+  "version": "1.0.0",
+  "description": "* redis\r * rabbitmq\r * pm2\r * node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/baconsoap/mapper"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/baconsoap/mapper/issues"
+  },
+  "homepage": "https://github.com/baconsoap/mapper",
+  "devDependencies": {
+    "chai": "^2.1.2",
+    "gulp": "^3.8.11",
+    "gulp-spawn-mocha": "^2.0.1",
+    "karma": "^0.12.31",
+    "karma-coverage": "^0.2.7",
+    "karma-mocha": "^0.1.10",
+    "karma-mocha-reporter": "^1.0.2",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "karma-sinon-chai": "^0.3.0",
+    "mocha": "^2.2.1",
+    "sinon": "^1.14.1",
+    "sinon-chai": "^2.7.0",
+    "supertest": "^0.15.0"
+  },
+  "dependencies": {
+    "joi": "^6.0.8",
+    "mysql": "^2.5.5"
+  }
+}

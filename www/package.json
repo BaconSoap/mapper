@@ -1,0 +1,25 @@
+{
+  "name": "mapper.www",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.3.1",
+    "bluebird": "^2.9.14",
+    "dotenv": "^1.0.0",
+    "hapi": "^8.4.0",
+    "hapi-auth-cookie": "^2.0.0"
+  },
+  "devDependencies": {
+    "gulp-concat": "^2.5.2",
+    "gulp-minify-html": "^1.0.1",
+    "gulp-ng-html2js": "^0.2.0",
+    "gulp-typescript": "^2.5.0",
+    "typescript": "^1.4.1"
+  }
+}
