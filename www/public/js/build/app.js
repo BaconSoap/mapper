@@ -1,4 +1,4 @@
-var app = angular.module('MAPPER.repoContext.repoContextSvc', []);
+var app = angular.module('mapper.repoContext.repoContextSvc', []);
 var RepoContextSvc = (function () {
     function RepoContextSvc() {
         this.repos = [];
@@ -30,7 +30,7 @@ var ValidationError = (function () {
 app.service('RepoContextSvc', RepoContextSvc);
 
 ///<reference path="../../shared/repoContext/repoContextSvc" />
-var app = angular.module('MAPPER.repoChoice', ['MAPPER.repoContext.repoContextSvc']);
+var app = angular.module('mapper.repoChoice', ['mapper.repoContext.repoContextSvc']);
 var RepoChoiceController = (function () {
     function RepoChoiceController($log, repoContextSvc) {
         this.repoContextSvc = repoContextSvc;
@@ -49,4 +49,4 @@ var RepoChoiceController = (function () {
 app.controller('RepoChoiceCtrl', RepoChoiceController);
 
 ///<reference path="components/repoContext/repoChoiceCtrl.ts" />
-var app = angular.module('MAPPER', ['MAPPER.repoChoice', 'MAPPER.views']);
+var app = angular.module('mapper', ['mapper.repoChoice', 'mapper.views']);
