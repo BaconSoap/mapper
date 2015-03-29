@@ -4,7 +4,7 @@ var path = require('path');
 exports.register = function(server, options, next) {
   
   var uploadFile = function(request, reply) {
-    reply();
+    reply({fileId: 'asdf-asdf-asdf'});
   };
 
   server.route({

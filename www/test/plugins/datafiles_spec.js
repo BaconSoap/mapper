@@ -16,6 +16,14 @@ describe('mapper.www.datafiles', function() {
     mockFs(config);
   };
 
+  var setupValidUpload = function(name, contents) {
+    configFs('tenBytes', '1234567890')
+    
+    return request(server.listener)
+      .post('/datafiles')
+      .field('file', fs.createReadStream(__dirname + '/tenBytes'));
+  }
+
   it('rejects empty files', function(done) {
     configFs('empty', '');
     request(server.listener)
@@ -35,11 +43,7 @@ describe('mapper.www.datafiles', function() {
   });
 
   it('accepts files at least 10 bytes large', function(done) {
-    configFs('tenBytes', '1234567890')
-    
-    request(server.listener)
-      .post('/datafiles')
-      .field('file', fs.createReadStream(__dirname + '/tenBytes'))
+    setupValidUpload()
       .expect(200, done);
   });
 
@@ -61,4 +65,13 @@ describe('mapper.www.datafiles', function() {
       .expect(/allowed: 1000000/)
       .expect(400, done);
   });
+
+  it('returns an id for valid uploads', function(done) {
+    setupValidUpload()
+      .end(function(err, data) {
+        data.body.fileId.length.should.be.greaterThan(10);
+        done();
+      });
+  })
+
 });
