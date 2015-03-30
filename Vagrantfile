@@ -25,10 +25,11 @@ Vagrant.configure("2") do |config|
     chef.add_recipe 'vim'
     chef.add_recipe 'mariadb::default'
     chef.add_recipe 'redis'
-    chef.add_recipe 'ruby_build'
-    chef.add_recipe 'rbenv::user'
+    #chef.add_recipe 'ruby_build'
+    #chef.add_recipe 'rbenv::user'
     chef.add_recipe 'tmux'
     chef.add_recipe 'nodejs'
+    chef.add_recipe 'rabbitmq'
     
     chef.json = {
       :nginx => {

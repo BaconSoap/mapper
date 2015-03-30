@@ -14,3 +14,4 @@ cookbook "rbenv", {:github=>"fnichol/chef-rbenv"}
 cookbook "tmux", {}
 cookbook "nodejs", {:github=>"mdxp/nodejs-cookbook"}
 cookbook "mariadb"
+cookbook "rabbitmq"
