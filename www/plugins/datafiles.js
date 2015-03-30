@@ -10,7 +10,7 @@ exports.register = function(server, options, next) {
     console.log('connected to rabbitmq at ' + process.env.AMQP_URL);
     var ch = conn.createChannel();
     var ok = ch.then(function(ch){
-      return ch.assertExchange('fileuploads', 'topic', {durable: true}).then(function(){return ch;});
+      return ch.assertExchange('fileUploads', 'topic', {durable: true}).then(function(){return ch;});
     });
     return ch;
   };
@@ -24,7 +24,7 @@ exports.register = function(server, options, next) {
       uploadStream.pipe(ws);
       uploadStream.on('end', function() {
         var msgData = new Buffer(JSON.stringify({fileId: id, filePath: filePath}));
-        ch.publish('fileuploads', 'fileuploaded', msgData);
+        ch.publish('fileUploads', 'fileUploaded', msgData);
         reply({fileId: id});
       });
     };

@@ -32,6 +32,8 @@
     "supertest": "^0.15.0"
   },
   "dependencies": {
+    "amqplib": "^0.3.2",
+    "dotenv": "^1.0.0",
     "joi": "^6.0.8",
     "mock-fs": "^2.5.0",
     "mysql": "^2.5.5"
