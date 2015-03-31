@@ -25,11 +25,12 @@ require('amqp.channel')(process.env.AMQP_URL, {
   assertExchange: [['fileUploads', 'topic', {durable: true}]],
   assertQueue: [['fileUploads', {durable: true}]],
   bindQueue: [['fileUploads', 'fileUploads', 'fileUploaded']]
-}).then(listen);
+}).then(listen).catch(function(e){ console.log('caught error: '); console.error(e); process.exit(1);});
 
 process.once('SIGINT', error);
+process.once('SIGTERM', error);
 
-function error(e){
+function error(e) {
   process.exit(1);
 }
 
@@ -37,13 +38,15 @@ var loadFile = function(path, id, cb) {
   var data = [];
   csv
     .fromPath(path)
-    .on('data', function(row) { data.push(row) } )
+    .on('data', function(row) { row.push(''); row.push(''); data.push(row) } )
     .on('end', function() {
       var parsed = {};
       var h = (data.splice(0, 1))[0];
       for (var i = 0; i < h.length; i++) {
         h[i] = h[i].trim();
       }
+      h[h.length - 2] = 'lat';
+      h[h.length - 1] = 'lng';
       parsed.headers = h;
       parsed.data = data;
       console.log(parsed);
