@@ -1,5 +1,11 @@
-///<reference path="components/repoContext/repoChoiceCtrl.ts" />
-
-declare var angular: any;
-
-var app = angular.module('mapper', ['mapper.repoChoice', 'mapper.views']);
+declare var jQuery: any;
+jQuery(function () {
+    jQuery('#fileupload').fileupload({
+        dataType: 'json',
+        done: function (e, data) {
+            jQuery.each(data.result.files, function (index, file) {
+                jQuery('<p/>').text(file.name).appendTo(document.body);
+            });
+        }
+    });
+});

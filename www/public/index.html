@@ -23,7 +23,7 @@
     <![endif]-->
   </head>
 
-  <body ng-app="mapper">
+  <body>
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -48,7 +48,7 @@
 
     <div class="container" style="margin-top: 60px">
 
-      <div ng-include="'repoContext/repoChoiceCtrl'"></div>
+      hello <input type="file" name="file" data-url="/datafiles" id="fileupload">
       
     </div><!-- /.container -->
 
@@ -57,9 +57,9 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="bower_components/angular/angular.min.js"></script>
-    <script src="js/build/views.min.js"></script>
     <script src="js/build/app.js"></script>
   </body>
 </html>

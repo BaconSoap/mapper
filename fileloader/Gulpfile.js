@@ -5,11 +5,11 @@ var runTests = require('../gulp-util/testing.js').runHapiTests({ root: L('/model
 var files = L(["/model/**/*.js", '/test/**/*_spec.js']);
 
 
-gulp.task('test-db', runTests);
+gulp.task('test-fileloader', runTests);
 
-gulp.task('watch-test-db', function() {
-  gulp.watch(files, ['test-db']);
+gulp.task('watch-test-fileloader', function() {
+  gulp.watch(files, ['test-fileloader']);
 });
 
-gulp.task('default-db', ['watch-test-db']);
-gulp.task('default', ['default-db']);
+gulp.task('default-fileloader', ['watch-test-fileloader']);
+gulp.task('default', ['default-fileloader']);

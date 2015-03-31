@@ -6,14 +6,14 @@ var listen = function(ch) {
     ch.ack(data)
   };
 
-  console.log('using queue fileUploads');
-  ch.consume('fileUploads', listener);
+  console.log('using queue fileLoads');
+  ch.consume('fileLoads', listener);
 };
 
 require('amqp.channel')(process.env.AMQP_URL, {
-  assertExchange: [['fileUploads', 'topic', {durable: true}]],
-  assertQueue: [['fileUploads', {durable: true}]],
-  bindQueue: [['fileUploads', 'fileUploads', 'fileUploaded']]
+  assertExchange: [['fileLoads', 'topic', {durable: true}]],
+  assertQueue: [['fileLoads', {durable: true}]],
+  bindQueue: [['fileLoads', 'fileLoads', 'fileLoaded']]
 }).then(listen);
 
 process.once('SIGINT', error);

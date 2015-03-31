@@ -14,7 +14,8 @@ var pool = mysql.createPool({
 
 module.exports = {
   model: {
-    User: require('./model/users.js')(pool)
+    User: require('./model/users.js')(pool),
+    FileData: require('./model/fileData.js')(pool)
   },
   __pool: pool
 }
