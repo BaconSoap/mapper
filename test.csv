@@ -1,3 +1,14 @@
-id, lat, lng
-0, -46.11382865, -101.63865528
-1, 46.11382865, 99.64
+id, address
+0, "48 grove st, 02144"
+1, "204 Ballyclare Road, Newtownabbey, Newtownabbey BT36 5JS, UK"
+2, "2 Kinghorn Street, London EC1A 7HT, UK"
+3, "2 Marine Parade, Instow, Bideford, Devon EX39 4HZ, UK"
+4, "152 Sheffield Road, Sheffield, South Yorkshire S12 4LW, UK"
+5, "Tufthorn Avenue, Coleford, Gloucestershire GL16, UK"
+6, "16 The Street, Sharrington, Melton Constable, Norfolk NR24 2PJ, UK"
+7, "23 Dorset Avenue, East Grinstead, West Sussex RH19 2AB, UK"
+8, "Unnamed Road, Shetland, Shetland Islands ZE2 9BU, UK"
+9, "15 Waterloo, Breakish, Isle of Skye, Highland IV42 8QE, UK"
+10, "3 Wadebridge Street, Poundbury, Dorchester, Dorset DT1 3AT, UK"
+11, "B1263, Richmond, North Yorkshire DL10, UK"
+12, "3 Stow Park Circle, Newport, Newport NP20 4HE, UK"

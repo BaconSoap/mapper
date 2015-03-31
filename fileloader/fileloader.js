@@ -40,7 +40,11 @@ var loadFile = function(path, id, cb) {
     .on('data', function(row) { data.push(row) } )
     .on('end', function() {
       var parsed = {};
-      parsed.headers = (data.splice(0, 1))[0];
+      var h = (data.splice(0, 1))[0];
+      for (var i = 0; i < h.length; i++) {
+        h[i] = h[i].trim();
+      }
+      parsed.headers = h;
       parsed.data = data;
       console.log(parsed);
       cb(parsed);
