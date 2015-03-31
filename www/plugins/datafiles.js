@@ -2,7 +2,7 @@ var Joi = require('joi');
 var path = require('path');
 var uuid = require('node-uuid');
 var fs = require('fs');
-var open = require('amqplib').connect(process.env.AMQP_URL);
+var open = require('amqplib');
 
 exports.register = function(server, options, next) {
   
@@ -12,6 +12,7 @@ exports.register = function(server, options, next) {
     var ok = ch.then(function(ch){
       return ch.assertExchange('fileUploads', 'topic', {durable: true}).then(function(){return ch;});
     });
+
     return ch;
   };
 
@@ -49,7 +50,7 @@ exports.register = function(server, options, next) {
     next();
   };
 
-  open.then(setupRabbit).then(setupRoutes);
+  open.connect(process.env.AMQP_URL).then(setupRabbit).then(setupRoutes);
 };
 
 exports.register.attributes = {

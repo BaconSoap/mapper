@@ -1,0 +1,5 @@
+#!/bin/sh
+
+sudo rabbitmqctl add_user mapper_test mapper_test
+sudo rabbitmqctl add_vhost mapper_test
+sudo rabbitmqctl set_permissions -p mapper_test mapper_test ".*" ".*" ".*"
